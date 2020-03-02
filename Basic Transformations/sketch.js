@@ -11,9 +11,25 @@ function setup() {
 function draw() {
   background(255);
   drawBasicGrid(220);
-
+ 
 
   //transformation one: TRANSLATION
+  push();
+  translate(100,0);
+  scale(1);
+  drawBasicGrid(150);
+  //rectangleRed(100,40);
+  face(0,0);
+  pop();
+
+  push();
+  translate(0,200);
+  translate(40,240);
+  rectMode(CENTER);
+  drawBasicGrid(150);
+  rotate(radians(-frameCount));
+  rectangleBlue(0, 0);
+  pop();
 
  
 
