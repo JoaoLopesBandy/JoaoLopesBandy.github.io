@@ -10,7 +10,13 @@ function setup() {
 
 function draw() {
   background(255);
-  drawBasicGrid(220);
+  //drawBasicGrid(220);
+
+  push();
+  translate(width/2,height/2);
+  ellipseMode(CENTER);
+  ellipse(0,0,width*.3,width*.3);
+  pop();
  
 
   //transformation one: TRANSLATION
