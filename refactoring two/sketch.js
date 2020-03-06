@@ -5,26 +5,30 @@
 //  - is able to work easily with any canvas size
 
 function setup() {
-  createCanvas(windowWidth,windowHeight);
+  createCanvas(windowWidth, windowHeight);
 }
 
 function draw() {
   background(255);
   stroke(0);
-  line(width/2, 0, width/2, height);
-  line(0, height/2, width, height/2);
+  line(width / 2, 0, width / 2, height);
+  line(0, height / 2, width, height / 2);
   noStroke();
   fill(0);
-  if (mouseX < width/2 && mouseY < height/2) {
-    rect(0, 0, width/2, height/2);
+  //draws rectangle if mouse is top-left of the screen
+  if (mouseX < width / 2 && mouseY < height / 2) {
+    rect(0, 0, width / 2, height / 2);
   }
-  else if (mouseX > width/2 && mouseY < height/2) {
-    rect(width/2, 0, width/2, height/2);
+  //draws rectangle if mouse is top-right of the screen
+  else if (mouseX > width / 2 && mouseY < height / 2) {
+    rect(width / 2, 0, width / 2, height / 2);
   }
-  else if (mouseX < width/2 && mouseY > height/2) {
-    rect(0, height/2, width/2, height/2);
+  //draws rectangle if mouse is bottom-left of the screen
+  else if (mouseX < width / 2 && mouseY > height / 2) {
+    rect(0, height / 2, width / 2, height / 2);
   }
-  else if (mouseX > width/2 && mouseY > height/2) {
-    rect(width/2, height/2, width/2, height/2);
+  //draws rectangle if mouse is bottom-right of the screen
+  else if (mouseX > width / 2 && mouseY > height / 2) {
+    rect(width / 2, height / 2, width / 2, height / 2);
   }
 }
