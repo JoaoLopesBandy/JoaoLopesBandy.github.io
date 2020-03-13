@@ -1,34 +1,48 @@
-
-let gridSpacing = 20;
-const PADDING = 20;
-
-function border() {
-  strokeWeight(15);
-  fill (100);
-  rect(width/2, height/2, width, height);
-  strokeWeight(2);
-}
+//Diagonal Line Art 
+const RECT_WIDTH = 10;
+const RECT_HEIGHT = 50;
+let colors = ["#3748CA", "#6379F3", "#AAB2FB", "#8DDCFB", "#CCE6FD"]; //fill with HEX codes as Strings.
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  rectMode(CENTER);
-
 }
 
 function draw() {
-  background(50);
-  border();
-  drawGrid();
+  background(220);
+  randomSeed(0);
+  drawRowRGB(height*0.2);
+  drawRowHSB(height*0.5);
+  drawRowCustom(height*0.8);
+}
 
+function drawRowCustom(yPos){
+  colorMode(RGB,255);
+  for(let x = 0; x < width; x += RECT_WIDTH){
+    let index = int(random(colors.length));
+    fill(colors[index]);
+    rect(x, yPos, RECT_WIDTH, RECT_HEIGHT);
+  }
+}
 
+function drawRowHSB(yPos){
+  colorMode(HSB, 360);
+  for(let x = 0; x < width; x += RECT_WIDTH){
+    fill(x/3 % 360, 300, map(mouseY,0,height,0,300));
+    rect(x, yPos, RECT_WIDTH, RECT_HEIGHT);
+  }
 }
 
 
-function drawGrid() {
-  for (let x = gridSpacing / 2 + PADDING; x < width; x += gridSpacing) {
-    for (let y = gridSpacing / 2 + PADDING; y < height; y += gridSpacing) {
-      rect(x, y, gridSpacing, gridSpacing);
-    }
+function drawRowRGB(yPos){
+  colorMode(RGB,255);
+  for(let x = 0; x < width; x += RECT_WIDTH){
+    fill(random(255), random(255), random(255));
+    rect(x, yPos, RECT_WIDTH, RECT_HEIGHT);
   }
+}
 
+function border(){
+  strokeWeight(15);
+  rect(0,0,width,height);
+  strokeWeight(2);
 }
