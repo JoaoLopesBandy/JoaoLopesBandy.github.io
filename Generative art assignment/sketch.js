@@ -1,6 +1,4 @@
-// diagonal line art
-
-let GRID_SIZE = random(300);
+let GRID_SIZE = 50;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
