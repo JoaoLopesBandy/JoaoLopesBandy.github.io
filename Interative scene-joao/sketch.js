@@ -47,8 +47,10 @@ function crossHair(x, y) {
   strokeWeight(1);
 }
 function bang(x,y){
-  fill()
-  ellipse()
+  fill(198, 227, 11);
+  ellipse(x,y,40,40);
+  fill(237, 143, 2);
+  ellipse(x,y,30,30);
 }
 
 function mountains(x, y) {
@@ -78,6 +80,9 @@ function draw() {
   tree(0, 500)
   deer(800, 600);
   crossHair(mouseX, mouseY);
+  if (mouseIsPressed) {
+    bang(mouseX, mouseY);
+  }
   if (keyIsDown(LEFT_ARROW)) {
     moveDeer -= 10;
   }
