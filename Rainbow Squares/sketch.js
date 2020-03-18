@@ -1,17 +1,19 @@
 
 let gridSpacing = 40;
 
-function mouseClicked() {
-  circleGrid();
-}
 
-function keyPressed() {
-  if (keyCode === RIGHT_ARROW) {
+function mouseClicked() {
+  if (mouseButton === LEFT) {
     gridSpacing += 5;
     background(200);
     circleGrid();
   }
-  else if (keyCode === LEFT_ARROW) {
+}
+
+
+
+function keyPressed() {
+  if (keyCode === SHIFT) {
     if (gridSpacing != 5) {
       gridSpacing -= 5;
       background(200);
@@ -20,9 +22,6 @@ function keyPressed() {
   }
 }
 
-
-
-
 function circleGrid() {
   for (let y = 0; y < height; y += gridSpacing) {
     for (let x = 0; x < width; x += gridSpacing) {
@@ -30,7 +29,7 @@ function circleGrid() {
       let randRed = random(255);
       let randGreen = random(255);
       let randBlue = random(255);
-      if (x <= width - 40 && Y <= height - 40) {
+      if (x <= width - 40 && y <= height - 40) {
         fill(randRed, randGreen, randBlue);
         rect(x, y, gridSpacing, gridSpacing);
       }
@@ -44,8 +43,10 @@ function setup() {
   background(200)
   createCanvas(windowWidth, windowHeight);
   circleGrid();
+  noLoop();
 }
 
 function draw() {
+
 
 }
