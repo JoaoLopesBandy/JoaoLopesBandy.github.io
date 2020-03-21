@@ -3,7 +3,7 @@ let xoff = 0;
 let yoff = 0;
 let inc = 0.01;
 let start = 0;
-const RECTWIDTH = 0.5;
+const RECTWIDTH = 0.3;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -17,7 +17,7 @@ function generateTerrain(){
     let y = map(noise(yoff), 0, 1, 0, height);
     rect(x, height, x + RECTWIDTH, y);
 
-    yoff += 0.001;
+    yoff += 0.003;
   }
   start += inc;
 }

@@ -13,7 +13,6 @@ function chessBoard() {
     for (let j = 0; j <= 10; j++) {
       rect(squareWidthApart, squareHeightApart, 75, 75);
       squareWidthApart += 75;
-      
     }
     squareHeightApart += 75;
     squareWidthApart = 0;
